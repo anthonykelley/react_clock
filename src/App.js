@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import { Button, Container, } from 'semantic-ui-react'
 
 class App extends Component {
   state={ time: new Date(), secondsElapsed: 0 }
@@ -34,12 +35,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <Container>
         <p className='clock'>{this.state.time.toLocaleTimeString()}</p>
         <h4>{this.getMinutes()}:{this.getSeconds()}</h4>
-        <button onClick={this.handleStartClick}>Start</button>
-        <button onClick={this.handleStopClick}>Stop</button>
-      </div>
+        <Button onClick={this.handleStartClick}>Start</Button>
+        <Button onClick={this.handleStopClick}>Stop</Button>
+      </Container>
     );
   }
 }
